@@ -1,0 +1,334 @@
+*{
+    padding : 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container1{
+    
+    width: 70%;
+    background-color: #08044679;
+    margin: 15rem auto;
+    padding-bottom: 5rem;
+    
+    h1{
+        margin: 2rem 0;
+        font-size: 6rem;
+        color: white;
+        text-align: center;
+    }
+}
+
+.retrybutton{
+    background-color: #00BBFF ;
+    font-size: 3rem;
+    display: inline-block;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    
+    margin-top: 1.5rem;
+    text-decoration: none;
+    padding: 1rem 4rem;
+    border-radius: 3rem;
+    color: #080446;
+
+    transition: 0.5s ease;
+
+    &:hover{
+        
+        color: #ffffff;
+        background-color: #080446;
+
+    }
+}
+
+
+@mixin  respond($breakpoint){
+
+    
+    @if $breakpoint == smallphone{
+        @media  (max-width: 390px) {
+            @content
+        }
+    }
+    @if $breakpoint == phone{
+        @media (max-width: 500px) {
+            @content
+        }
+    }
+    @if $breakpoint == smalltab{
+        @media (max-width: 700px) {
+            @content
+        }
+    }
+    @if $breakpoint == largetab{
+        @media (max-width: 900px) {
+            @content
+        }
+    }
+    @if $breakpoint == smalllaptop{
+        @media (max-width: 1080px) {
+            @content
+        }
+    }
+    @if $breakpoint == laptop{
+        @media (max-width: 1376px) {
+            @content
+        }
+    }
+  }
+  
+  
+  html{
+    font-size: 62.5%;
+    
+    overflow-y: scroll;
+  
+    @include respond(laptop){
+        font-size: 61%;
+    }
+    @include respond(smalllaptop){
+        font-size: 58%;
+    }
+   
+    
+    @include respond(largetab){
+        font-size: 50%;
+    }
+    @include respond(smalltab){
+        font-size: 48%;
+    }
+  
+    @media(max-width:600px){
+        font-size: 47%;
+        
+    }
+    @include respond(phone){
+        font-size: 43%;
+    }
+    @media(max-width:450px){
+        font-size: 40%;
+        
+    }
+    @include respond(smallphone){
+        font-size: 34%;
+    }
+    @media(max-width:330px){
+        font-size: 25%;
+        
+    }
+    @media(max-width:290px){
+        font-size: 20%;
+        
+    }
+   
+  }
+
+
+
+body{
+    background-image: url(./img/bg.gif);
+    background-size: contain;
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+.logoutbutton{
+    background-color: #00BBFF ;
+    font-size: 3rem;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    text-decoration: none;
+    padding: 1rem 4rem;
+    border-radius: 3rem;
+    color: #080446;
+
+    transition: 0.5s ease;
+
+    &:hover{
+        
+        color: #ffffff;
+
+        transform: scale(1.1);
+    }
+}
+
+.nextbutton{
+    background-color: #00BBFF ;
+    font-size: 3rem;
+
+    margin-top: 2rem;
+    display: none;
+    text-decoration: none;
+    padding: 1rem 4rem;
+    border-radius: 3rem;
+    color: #080446;
+
+    transition: 0.5s ease;
+
+    
+}
+
+.container{
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    color: #00BBFF;
+}
+
+.question{
+    margin-top: 5rem;
+
+    
+    
+    h1{
+        background-color: #080446;
+        padding: 2.5rem 0;
+        font-size: 5rem;
+        border: 2px #00BBFF solid;
+        border-radius: 5rem;
+
+        span{
+            text-align: left !important;
+        }
+    }
+}
+
+.options{
+    ul{
+        li{
+            background-color: #080446;
+            color:rgb(187, 7, 7);
+            font-size: 3rem;
+            border-radius: 3rem;
+            border: 1.5px #00BBFF solid;
+            list-style-type: none;
+            margin: 2rem auto;
+            width: 75%;
+            transition: 0.7s ease;
+
+            a{
+                padding: 1.5rem;
+                display: block;
+                font-size: 3rem;
+                color: #00BBFF;
+                border-radius: 3rem;
+                border: 1.5px #00BBFF solid;
+                text-decoration: none;
+                transition: 0.7s ease;
+                width: 100%;
+            }
+
+            &:hover a{
+                color: #080446;
+            }
+
+            &:hover{
+                background-color: #00BBFF;
+                cursor: pointer;
+                color:#080446 !important ;
+            }
+        }
+
+
+    }
+}
+
+.scorecard{
+    background-color: #08044679;
+    color: white;
+    border: 2px solid white;
+    display: inline-block;
+    padding: 1rem;
+
+    margin-top: 3rem;
+    margin-left: 3rem;
+
+    h1{
+        margin-bottom: 0.5rem;
+        font-size: 3rem;
+    }
+}
+
+.question{
+    animation-name: movedown;
+    animation-duration: 1.5s;
+    animation-fill-mode: backwards;
+    animation-delay: 0.3s;
+}
+
+#option{
+
+    &1{
+        animation-name: moveright;
+    animation-duration: 0.5s;
+    animation-fill-mode: backwards;
+    animation-delay: 2s;
+    }
+
+    &2{
+        animation-name: moveleft;
+    animation-duration: 0.5s;
+    animation-fill-mode: backwards;
+    animation-delay: 2.5s;
+    }
+
+    &3{
+        animation-name: moveright;
+    animation-duration: 0.5s;
+    animation-fill-mode: backwards;
+    animation-delay: 3s;
+    }
+
+    &4{
+        animation-name: moveleft;
+    animation-duration: 0.5s;
+    animation-fill-mode: backwards;
+    animation-delay: 3.5s;
+    }
+}
+
+
+
+
+
+@keyframes movedown{
+    0%{
+      transform: translateY(-100%);
+      opacity: 0;
+      
+    }
+  
+    100%{
+      transform: translateY(0);
+      opacity: 1 ;
+      
+    }
+  }
+  
+  @keyframes moveright{
+    0%{
+      transform: translateX(-50%);
+      opacity: 0;
+    }
+  
+    100%{
+      transform: translateX(0);
+      opacity: 1 ;
+    }
+  }
+  
+  @keyframes moveleft{
+    0%{
+      transform: translateX(50%);
+      opacity: 0;
+    }
+  
+    100%{
+      transform: translateX(0);
+      opacity: 1 ;
+    }
+  }
